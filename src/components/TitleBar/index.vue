@@ -37,7 +37,8 @@ export default {
     margin-bottom: 8px;
     h3 {
       font-size: 20px;
-      color: #2371c5;
+      /*color: #2371c5;*/
+      color: #409eff;
       position: relative;
       padding-left: 10px;
       display: inline-block;
@@ -48,7 +49,7 @@ export default {
       content: '';
       width: 4px;
       height: 20px;
-      background: rgba(35, 113, 197, 1);
+      background: #409eff;
       position: absolute;
       left: 0;
     }

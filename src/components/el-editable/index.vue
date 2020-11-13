@@ -404,7 +404,7 @@ export default {
       padding: 5px 0;
       font-weight: 400;
       color:#ffffff;
-      background: #2371c5;
+      background: #409eff;
 
       > div {
         cursor: pointer;

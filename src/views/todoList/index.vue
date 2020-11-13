@@ -1,6 +1,6 @@
 <template>
     <div class="to-do">
-      <TitleBar titleText="代办事项" :hasBottomBorder="true"></TitleBar>
+      <TitleBar titleText="代办事宜" :hasBottomBorder="true"></TitleBar>
       <Search
         label-width="80px"
         :data="searchData"
@@ -22,7 +22,7 @@
           <template
             slot="default-operation"
             slot-scope="{row}">
-            <el-button type="text">查看</el-button>
+            <el-button type="text" @click="goApproval(row)">审批</el-button>
           </template>
         </el-editable>
       </div>
@@ -59,6 +59,15 @@ export default {
     this.getTableData()
   },
   methods: {
+    // 审批操作
+    goApproval (row) {
+      this.$router.push({
+        path: '/approval',
+        query: {
+          taskInfo: JSON.stringify(row)
+        }
+      })
+    },
     // 搜索 重置
     searchForm (form) {
       this.title = form.title || ''

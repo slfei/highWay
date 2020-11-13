@@ -25,6 +25,7 @@ export default {
   background: #f3f3f3;
   &>div {
     height: 100%;
+    overflow: auto;
     background: #fff;
   }
   font-family: 'Microsoft YaHei', 'Avenir', Helvetica, Arial, sans-serif;
