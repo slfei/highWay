@@ -1,4 +1,3 @@
-import dayjs from 'dayjs'
 // 列表--搜索字段
 export const searchData = [
   {
@@ -10,26 +9,26 @@ export const searchData = [
     }
   }
 ]
-// 列表
-export const templateTableColumn = [
+// 历史审批记录
+export const recordTableColumn = [
   {
     label: '序号',
     type: 'index',
     width: 56
   },
   {
-    prop: 'title',
+    prop: 'operator',
     label: '审批人',
     minWidth: 150
   },
   {
-    prop: 'time',
-    label: '日期',
-    minWidth: 150,
-    formatter: row => dayjs(new Date(row.time)).format('YYYY-MM-DD')
+    prop: 'operatime',
+    label: '处理时间',
+    minWidth: 150
+    // formatter: row => dayjs(new Date(row.time)).format('YYYY-MM-DD')
   },
   {
-    prop: 'operation',
+    prop: 'suggestion',
     label: '审批意见',
     minWidth: 400
   }

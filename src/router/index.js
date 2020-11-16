@@ -25,6 +25,14 @@ const router = new Router({
       meta: {
         title: '代办审批'
       }
+    },
+    {
+      path: '/done',
+      name: 'todoList',
+      component: () => import('@/views/doneList'),
+      meta: {
+        title: '已办事宜'
+      }
     }
   ]
 })

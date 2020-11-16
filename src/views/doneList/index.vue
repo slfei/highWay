@@ -1,6 +1,6 @@
 <template>
-    <div class="to-do">
-      <TitleBar titleText="代办事宜" :hasBottomBorder="true"></TitleBar>
+    <div class="done">
+      <TitleBar titleText="已办事宜" :hasBottomBorder="true"></TitleBar>
       <Search
         label-width="80px"
         :data="searchData"
@@ -22,7 +22,7 @@
           <template
             slot="default-operation"
             slot-scope="{row}">
-            <el-button type="text" @click="goApproval(row)">审批</el-button>
+            <el-button type="text" @click="goApproval(row)">查看</el-button>
           </template>
         </el-editable>
       </div>
@@ -35,7 +35,7 @@ import Search from '@/components/search'
 import {templateTableColumn, searchData} from './const'
 import axios from 'axios'
 export default {
-  name: 'todoList',
+  name: 'doneList',
   components: {
     elEditable,
     Search
@@ -65,7 +65,7 @@ export default {
         path: '/approval',
         query: {
           taskInfo: JSON.stringify(row),
-          doType: '0'
+          doType: '1'
         }
       })
     },
@@ -79,7 +79,7 @@ export default {
     // 请求列表数据
     getTableList () {
       return this.$fetch('todolist.mobileWork', {
-        'method': 'todo',
+        'method': 'todo_ed',
         'uid': 'apple1',
         'searchValues': encodeURIComponent(this.title),
         'pageno': this.pageConfig.page,
@@ -113,7 +113,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-  .to-do {
+  .done {
     height: 100%;
     padding: 0 8px;
     box-sizing: border-box;

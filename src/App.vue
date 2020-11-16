@@ -13,6 +13,7 @@ export default {
 </script>
 
 <style lang="less">
+@import '~@/assets/css/index.less';
 #app {
   width: 100%;
   height: 100%;
