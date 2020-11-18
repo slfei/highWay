@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     handlePageChange (page) {
-      this.page.page = page
+      this.pageConfig.page = page
       this[this.getTableDataKey]()
     },
     handleSizeChange (size) {
