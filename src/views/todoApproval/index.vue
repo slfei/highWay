@@ -138,7 +138,8 @@ export default {
         nextprId: [
           { required: true, message: '请选择审批人', trigger: 'blur' }
         ]
-      }
+      },
+      currentRow: {}
     }
   },
   created () {
@@ -149,6 +150,7 @@ export default {
     jQuery.DownLoadOA_XTBGFile = this.downloadFile
   },
   methods: {
+    // 取消操作
     cancel () {
       this.$refs['nodeForm'].resetFields()
       this.dialogVisible = false
@@ -178,7 +180,7 @@ export default {
         'nextprId': this.nodeForm.nextprId,
         'username': this.routeParams.username,
         'isdonext': '',
-        'nextNodeCode': '',
+        'nextNodeCode': this.currentRow.requestParams || this.currentRow.chinaKey,
         'procNodeType': '',
         'nodeMarker': ''
       }).then(res => {
@@ -195,6 +197,7 @@ export default {
     },
     // 通过节点获取审批人员
     getNodePerson (value) {
+      this.currentRow = value
       this.nodePerson = value.labelValueArr || []
       this.nodeForm.nodePerson = ''
     },
