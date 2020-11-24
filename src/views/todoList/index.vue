@@ -56,9 +56,17 @@ export default {
     }
   },
   created () {
+    this.add()
     this.getTableData()
   },
   methods: {
+    add () {
+      this.$fetch('todolist.paymenttempAdd', {
+        agencyfeetype: 1
+      }).then(res => {
+        console.log(res)
+      })
+    },
     // 审批操作
     goApproval (row) {
       this.$router.push({

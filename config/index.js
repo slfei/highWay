@@ -17,6 +17,13 @@ module.exports = {
         pathRewrite: {
           '^/gygsmobile': '/gygsmobile'
         }
+      },
+      '/hx_sell_commission': {
+        target: 'http://172.17.126.142:9010',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/hx_sell_commission': '/hx_sell_commission'
+        }
       }
     },
 
